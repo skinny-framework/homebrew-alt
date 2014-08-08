@@ -8,13 +8,7 @@ class Skinny < Formula
   depends_on "npm"
 
   def install
-    # A symbolic link doesn't work, because skinny command uses
-    # sbt and sbt-debug script in the same directory.
-    (bin/"skinny").write <<-EOS.undent
-      #!/bin/sh
-      exec #{libexec}/skinny "$@"
-    EOS
-
     libexec.install Dir['*']
+    bin.write_exec_script libexec/"skinny"
   end
 end
