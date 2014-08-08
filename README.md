@@ -1,4 +1,6 @@
-### Skinny Framework Formula for Homebrew users
+### Skinny Framework's Homebrew formula
+
+If you're a MacOS X user, install `skinny` command via Homebrew!
 
 #### Install
 
