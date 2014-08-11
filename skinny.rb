@@ -2,9 +2,9 @@ require "formula"
 
 class Skinny < Formula
     homepage "http://skinny-framework.org/"
-  url "https://github.com/skinny-framework/skinny-framework/releases/download/1.2.8/skinny-1.2.8.tar.gz"
-  version "1.2.8"
-  sha1 "433af72d6b93fee160ef900e05167ad6f1a6d82c"
+  url "https://github.com/skinny-framework/skinny-framework/releases/download/1.2.9/skinny-1.2.9.tar.gz"
+  version "1.2.9"
+  sha1 "9eab7c8c07a51746945a9caf04ccbe491bbed072"
   depends_on "npm"
 
   def install
