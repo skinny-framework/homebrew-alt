@@ -1,7 +1,9 @@
 require "formula"
 
 class Skinny < Formula
-  def skinny_version = "1.3.0"
+  def skinny_version  
+    "1.3.0"
+  end
   homepage "http://skinny-framework.org/"
   url "https://github.com/skinny-framework/skinny-framework/releases/download/#{skinny_version}/skinny-#{skinny_version}.tar.gz"
   version skinny_version
