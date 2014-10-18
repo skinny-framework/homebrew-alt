@@ -10,9 +10,13 @@ class Skinny < Formula
   depends_on "npm"
 
   def install
-    system 'npm install -g yo'
-    system 'npm install -g generator-skinny'
     libexec.install Dir['*']
     bin.write_exec_script libexec/"skinny"
   end
+
+  def post_install
+    system 'npm install -g yo'
+    system 'npm install -g generator-skinny'
+  end
+
 end
