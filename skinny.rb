@@ -1,15 +1,17 @@
 require "formula"
 
 class Skinny < Formula
-  @skinny_version = "1.3.3"
+  @skinny_version = "1.3.4"
 
   homepage "http://skinny-framework.org/"
   url "https://github.com/skinny-framework/skinny-framework/releases/download/#{@skinny_version}/skinny-#{@skinny_version}.tar.gz"
   version @skinny_version
-  sha1 "b0bdb2dac7f920a3544075a134af6b7b9cf75f69"
+  sha1 "79cb32e4ddc579913445e3514cde62bd6ce66546"
   depends_on "npm"
 
   def install
+    system 'npm install -g yo'
+    system 'npm install -g generator-skinny'
     libexec.install Dir['*']
     bin.write_exec_script libexec/"skinny"
   end
