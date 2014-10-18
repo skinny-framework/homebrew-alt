@@ -5,9 +5,8 @@ class Skinny < Formula
 
   homepage "http://skinny-framework.org/"
   url "https://github.com/skinny-framework/skinny-framework/releases/download/#{@skinny_version}/skinny-#{@skinny_version}.tar.gz"
-  version @skinny_version
   sha1 "79cb32e4ddc579913445e3514cde62bd6ce66546"
-  depends_on "npm"
+  depends_on "node"
 
   def install
     libexec.install Dir['*']
