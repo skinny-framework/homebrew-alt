@@ -11,7 +11,7 @@ class Skinny < Formula
   def install
     node_prefix = libexec
     (libexec/"npm").write_env_script "npm",  :PREFIX => node_prefix
-    chmod 0755, "#{libexec}/npm"
+    chmod 0755, libexec/"npm"
 
     libexec.install Dir["*"]
 
