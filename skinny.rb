@@ -6,20 +6,28 @@ class Skinny < Formula
   sha1 "79cb32e4ddc579913445e3514cde62bd6ce66546"
   depends_on "node"
 
-  # TODO Needs to check npm is installed; could be built without-npm
   option "without-npm", "npm will not be installed"
 
   def install
+    node_prefix = libexec
+    (libexec/"npm").write_env_script "npm",  :PREFIX => node_prefix
+    chmod 0755, "#{libexec}/npm"
+
     libexec.install Dir["*"]
-    bin.write_exec_script libexec/"skinny"
+
+    (bin/"skinny").write <<-EOS.undent
+      #!/bin/bash
+      export PATH=#{node_prefix}/bin/:$PATH
+      PREFIX="#{node_prefix}" exec "#{libexec}/skinny" "$@"
+    EOS
   end
 
   def post_install
     # brew install skinny --without-npm
     return if build.without? "npm"
 
-    system "npm", "install", "-g", "yo"
-    system "npm", "install", "-g", "generator-skinny"
+    system libexec/"npm", "install", "-g", "yo"
+    system libexec/"npm", "install", "-g", "generator-skinny"
   end
 
 end
