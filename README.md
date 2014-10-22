@@ -2,6 +2,18 @@
 
 If you're a MacOS X user, install `skinny` command via Homebrew!
 
+### IMPORTANT NOTICE
+
+skinny formula is now available on homebrew project. You don't need brew tap anymore!
+
+https://github.com/Homebrew/homebrew/blob/master/Library/Formula/skinny.rb
+
+```sh
+brew untap skinny-framework/alt
+brew update
+brew install skinny
+```
+
 #### Install
 
 Run `brew tap` to import formulas.
