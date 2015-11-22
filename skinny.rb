@@ -1,4 +1,4 @@
-lass Skinny < Formula
+class Skinny < Formula
   desc "Full-stack web app framework in Scala"
   homepage "http://skinny-framework.org/"
   url "https://github.com/skinny-framework/skinny-framework/releases/download/2.0.0/skinny-2.0.0-1.tar.gz"
